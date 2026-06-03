@@ -10,11 +10,11 @@ interface LukeSkywalker {
 }
 
 export const fetchLukeSkywalker = async () => {
-  const data: LukeSkywalker = await fetch(
-    "https://swapi.py4e.com/api/people/1",
-  ).then((res) => {
-    return res.json();
-  });
+  const data = await fetch("https://swapi.py4e.com/api/people/1").then(
+    (res) => {
+      return res.json();
+    },
+  );
 
-  return data;
+  return data as LukeSkywalker;
 };
